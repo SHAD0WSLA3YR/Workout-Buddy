@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calisthenics AI Coach</title>
+
+    <!-- PWA Manifest & Theme -->
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#10B981" />
+    <link rel="apple-touch-icon" href="/icon.svg">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'brand-primary': '#10B981', // Emerald 500
+              'brand-secondary': '#0EA5E9', // Sky 500
+              'dark-bg': '#111827', // Gray 900
+              'dark-card': '#1F2937', // Gray 800
+              'dark-border': '#374151', // Gray 700
+              'dark-text-primary': '#F9FAFB', // Gray 50
+              'dark-text-secondary': '#9CA3AF', // Gray 400
+            },
+            keyframes: {
+              'countdown-pop': {
+                '0%, 100%': { transform: 'scale(1)', opacity: '0' },
+                '25%, 75%': { transform: 'scale(1.5)', opacity: '1' },
+              },
+            },
+            animation: {
+              'countdown-pop': 'countdown-pop 1s ease-in-out forwards',
+            },
+          }
+        }
+      }
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "@google/genai": "https://esm.sh/@google/genai@^1.13.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.1/",
+    "react/": "https://esm.sh/react@^19.1.1/",
+    "react": "https://esm.sh/react@^19.1.1",
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.8.0",
+    "recharts": "https://esm.sh/recharts@^3.1.2"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-dark-bg">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js').then(registration => {
+            console.log('Service Worker registered: ', registration);
+          }).catch(registrationError => {
+            console.log('Service Worker registration failed: ', registrationError);
+          });
+        });
+      }
+    </script>
+  </body>
+</html>

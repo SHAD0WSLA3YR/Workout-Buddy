@@ -1,0 +1,6 @@
+{
+  "name": "Calisthenics AI Coach",
+  "description": "An intelligent calisthenics coaching app that creates personalized, progressive workout plans based on user goals and performance feedback. The app features a modern, ergonomic UI and visualizes your progress over time.",
+  "requestFramePermissions": [],
+  "prompt": ""
+}
