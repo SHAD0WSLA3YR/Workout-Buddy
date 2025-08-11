@@ -1,6 +1,6 @@
-# Run and deploy your AI Studio app
+# Run and deploy Workout-Buddy
 
-This contains everything you need to run your app locally.
+This contains everything needed to run the app locally.
 
 ## Run Locally
 
